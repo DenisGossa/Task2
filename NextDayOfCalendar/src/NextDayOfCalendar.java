@@ -10,14 +10,14 @@
  */
 import java.util.Scanner;
 public class NextDayOfCalendar {
-	int [] daysOfMonthYear =     {31,28,31,30,31,30,31,31,30,31,30,31};
-    int [] daysOfMonthLeapYear = {31,29,31,30,31,30,31,31,30,31,30,31};
+	private int [] daysOfMonthYear =     {31,28,31,30,31,30,31,31,30,31,30,31};
+   	private int [] daysOfMonthLeapYear = {31,29,31,30,31,30,31,31,30,31,30,31};
 	
-	int currentyear;//current year
-	int currentday;
-	int currentmounth;
+	private int currentyear;//current year
+	private int currentday;
+	private int currentmounth;
 	
-	boolean isleapyear;
+	private boolean isleapyear;
 	
 	private void setCurrentDate() {
 		setYear();
