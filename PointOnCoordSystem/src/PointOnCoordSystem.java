@@ -74,14 +74,14 @@ public class PointOnCoordSystem {
     	PointOnCoordSystem a=new PointOnCoordSystem();
     	PointOnCoordSystem b=new PointOnCoordSystem();
     	PointOnCoordSystem c=new PointOnCoordSystem();
-    	PointOnCoordSystem point=new PointOnCoordSystem();
+    	PointOnCoordSystem setspoints=new PointOnCoordSystem();
        a.setXY();
        b.setXY();
        c.setXY();
        
-       if(point.isPointsofTriangle(a,b,c)) {
+       if(setspoints.isPointsofTriangle(a,b,c)) {
     	   System.out.println("The points are tops of the Triangle");
-    	   if(point.isRightAngledTriangle(a,b,c)) {
+    	   if(setspoints.isRightAngledTriangle(a,b,c)) {
     		   System.out.println("is right angled in the Triangle");
     	   }
     	   else {System.out.println("Triangle is not a right angled");}
