@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * There is a current day in [dd mm yy]. Find next day without using java library.
  * take into account of leap years
@@ -10,6 +8,7 @@ import java.util.Scanner;
  *
  * Writen by denisgossa doitnow@tut.by
  */
+import java.util.Scanner;
 public class NextDayOfCalendar {
 	int [] daysOfMonthYear =     {31,28,31,30,31,30,31,31,30,31,30,31};
     int [] daysOfMonthLeapYear = {31,29,31,30,31,30,31,31,30,31,30,31};
