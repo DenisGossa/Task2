@@ -45,12 +45,12 @@ public class PointOnCoordSystem {
 	private boolean isPointsofTriangle(PointOnCoordSystem a, PointOnCoordSystem b, PointOnCoordSystem c)
 	{
 	    if(distance(a, b) + distance(a, c) <= distance(c, b))
-	        return false;
+	        {return false;}
 	    if(distance(a, b) + distance(c, b) <= distance(a, c))
-	        return false;
+	        {return false;}
 	    if(distance(c, b) + distance(c, a) <= distance(a, b))
-	        return false;
-	    return true;
+	        {return false;}
+	    else {return true;}
 	}
 	
 	
@@ -65,7 +65,7 @@ public class PointOnCoordSystem {
 		if(abSqr+bcSqr==acSqr) {System.out.print("Corner B ");return true;}
 		if(abSqr+acSqr==bcSqr) {System.out.print("Corner A ");return true;}
 		if(acSqr+bcSqr==abSqr) {System.out.print("Corner C ");return true;}
-		return false;
+		else {return false;}
 	} 
 	
 	
