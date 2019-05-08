@@ -117,8 +117,8 @@ public class NextDayOfCalendar {
 				
 	}
 	
-	void viewNewDate() {
-		System.out.println("\nNext day:");
+	void viewCurrentDate() {
+		System.out.println("\nNew day:");
 		System.out.println("dd"+currentday);
 		System.out.println("mm"+currentmounth);
 		System.out.println("yy"+currentyear);
@@ -134,7 +134,7 @@ public class NextDayOfCalendar {
 		
 		tcalendar.setCurrentDate();
 		tcalendar.setNextDay();
-		tcalendar.viewNewDate();
+		tcalendar.viewCurrentDate();
 		
 		
 	}
