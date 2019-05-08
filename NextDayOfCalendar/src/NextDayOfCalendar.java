@@ -129,7 +129,6 @@ public class NextDayOfCalendar {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		NextDayOfCalendar tcalendar=new NextDayOfCalendar();
 		
 		tcalendar.setCurrentDate();
