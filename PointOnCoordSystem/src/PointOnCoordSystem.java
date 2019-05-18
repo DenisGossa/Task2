@@ -2,9 +2,9 @@
  * PointOnCoordSystem - Entering "x coordinate" and "y coordinate"  of 3 Points.
  * Check if they are tops of a triange, and if are check is the  right-angled triangle
  *
- * Version 1.0
+ * Version 1.1
  *
- * Date 07.05.2019
+ * Date 07.05.2019 (v1.1-18.05.19)
  *
  * Writen by denisgossa doitnow@tut.by
  */
@@ -39,18 +39,31 @@ public class PointOnCoordSystem {
 			}	
 	
 	
-	private double mySquare(double t) {return t*t;}
-	private double distance(PointOnCoordSystem a, PointOnCoordSystem b) { return Math.pow((mySquare(a.x - b.x) + mySquare(a.y - b.y)),(double)1/2); }
+	private double mySquare(double t) {
+		return t*t;
+	}
+	private double distance(PointOnCoordSystem a, PointOnCoordSystem b) {
+		return Math.pow((mySquare(a.x - b.x) + mySquare(a.y - b.y)),(double)1/2); 
+	}
 	
-	private boolean isPointsofTriangle(PointOnCoordSystem a, PointOnCoordSystem b, PointOnCoordSystem c)
-	{
-	    if(distance(a, b) + distance(a, c) <= distance(c, b))
-	        {return false;}
-	    if(distance(a, b) + distance(c, b) <= distance(a, c))
-	        {return false;}
-	    if(distance(c, b) + distance(c, a) <= distance(a, b))
-	        {return false;}
-	    else {return true;}
+	private boolean isPointsofTriangle(PointOnCoordSystem a, PointOnCoordSystem b, PointOnCoordSystem c){
+	    double distAB,distBC,distAC;
+		distAB=distance(a, b);
+		distBC=distance(c, b);
+		distAC=distance(a, c);
+		
+		if(distAB + distAC <= distBC){
+			return false;
+		}
+	    	if(distAB + distBC <= distAC){
+			return false;
+		}
+	    	if(distBC + distAC <= distAB){
+			return false;
+		}
+	    	else {
+			return true;
+		}
 	}
 	
 	
@@ -62,10 +75,21 @@ public class PointOnCoordSystem {
 		abSqr=ab*ab;
 		acSqr=ac*ac;
 		bcSqr=bc*bc;
-		if(abSqr+bcSqr==acSqr) {System.out.print("Corner B ");return true;}
-		if(abSqr+acSqr==bcSqr) {System.out.print("Corner A ");return true;}
-		if(acSqr+bcSqr==abSqr) {System.out.print("Corner C ");return true;}
-		else {return false;}
+		if(abSqr+bcSqr==acSqr) {
+			System.out.print("Corner B ");
+			return true;
+		}
+		if(abSqr+acSqr==bcSqr) {
+			System.out.print("Corner A ");
+			return true;
+		}
+		if(acSqr+bcSqr==abSqr) {
+			System.out.print("Corner C ");
+			return true;
+		}
+		else {
+			return false;
+		}
 	} 
 	
 	
@@ -84,10 +108,14 @@ public class PointOnCoordSystem {
     	   if(setspoints.isRightAngledTriangle(a,b,c)) {
     		   System.out.println("is right angled in the Triangle");
     	   }
-    	   else {System.out.println("Triangle is not a right angled");}
+    	   else {
+		   System.out.println("Triangle is not a right angled");
+	   }
        
        }
-       else {System.out.println("Not a triangle ");};
+       else {
+	       System.out.println("Not a triangle ");
+       };
        
 
     }
