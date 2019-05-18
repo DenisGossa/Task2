@@ -33,34 +33,39 @@ public class NextDayOfCalendar {
 	
 	
 	private void setYear() {
-		do {System.out.print("Enter a number(1582 or greater):");
-		currentyear=getInt();
+		do {
+			System.out.print("Enter a number(1582 or greater):");
+			currentyear=getInt();
 		}while(currentyear<1582);
 		isThisALeapYear();
 	}
 	private void setMounth() {
-		do {System.out.print("Enter a mounth(1-12):");
-		currentmounth=getInt();
+		do {
+			System.out.print("Enter a mounth(1-12):");
+			currentmounth=getInt();
 		}while(currentmounth<1||currentmounth>12);
 		
 	}
 	private void setDay() {
 		boolean correctentering;
 		do {
-				do {System.out.print("Enter a day:");
-				currentday=getInt();
+				do {
+					System.out.print("Enter a day:");
+					currentday=getInt();
 				}while(currentday<1||currentday>31);
 		
 				if(!isleapyear&&currentday>daysOfMonthYear[currentmounth-1]) {
-				System.out.println("Enter correct day ");
-				correctentering=false;
+					System.out.println("Enter correct day ");
+					correctentering=false;
 				}
 		
 				else if(isleapyear&&currentday>daysOfMonthLeapYear[currentmounth-1]) {
-				System.out.println("day isn't correct ");
-				correctentering=false;
+					System.out.println("day isn't correct ");
+					correctentering=false;
 				}
-				else {correctentering=true;}
+				else {
+					correctentering=true;
+				}
 		}while(!correctentering);
 	}
 	
@@ -80,16 +85,32 @@ public class NextDayOfCalendar {
 	}
 	
 	boolean isThisALeapYear() {
-		if(currentyear%400==0) {isleapyear=true; return true;}
-		if(currentyear%100==0) {isleapyear=false;return false;}
-		if(currentyear%4==0) {isleapyear=true;return true;}
-		else {isleapyear=false;return false;} 
+		if(currentyear%400==0) {
+			isleapyear=true; 
+			return true;
+		}
+		if(currentyear%100==0) {
+			isleapyear=false;
+			return false;
+		}
+		if(currentyear%4==0) {
+			isleapyear=true;
+			return true;
+		}
+		else {
+			isleapyear=false;
+			return false;
+		} 
 	};
 	
 	
 	private  boolean isLastDayOfMonth(){
-		if(isleapyear&&daysOfMonthLeapYear[currentmounth-1]==currentday) {return true;}
-		if(!isleapyear&&daysOfMonthYear[currentmounth-1]==currentday) {return true;}
+		if(isleapyear&&daysOfMonthLeapYear[currentmounth-1]==currentday) {
+			return true;
+		}
+		if(!isleapyear&&daysOfMonthYear[currentmounth-1]==currentday) {
+			return true;
+		}
 		return false;
 		
 	}
@@ -97,8 +118,12 @@ public class NextDayOfCalendar {
 	
 	
 	private  boolean isLastMonthOfYear(){
-		if(currentmounth==12) {return true;}
-		else {return false;}
+		if(currentmounth==12) {
+			return true;
+		}
+		else {
+			return false;
+		}
 		
 		
 	}
@@ -110,10 +135,26 @@ public class NextDayOfCalendar {
 	
 	void setNextDay() {
 		
-		if(isLastMonthOfYear()&&isLastDayOfMonth()) {currentday=1;currentmounth=1;++currentyear;return;}
-		if(currentmounth==2&&isLastDayOfMonth()) {currentday=1;++currentmounth;return;}
-		if(!isLastMonthOfYear()&&isLastDayOfMonth()) {currentday=1;++currentmounth;return;}
-		if(!isLastMonthOfYear()&&!isLastDayOfMonth()) {++currentday;return;}
+		if(isLastMonthOfYear()&&isLastDayOfMonth()) {
+			currentday=1;
+			currentmounth=1;
+			++currentyear;
+			return;
+		}
+		if(currentmounth==2&&isLastDayOfMonth()) {
+			currentday=1;
+			++currentmounth;
+			return;
+		}
+		if(!isLastMonthOfYear()&&isLastDayOfMonth()) {
+			currentday=1;
+			++currentmounth;
+			return;
+		}
+		if(!isLastMonthOfYear()&&!isLastDayOfMonth()) {
+			++currentday;
+			return;
+		}
 				
 	}
 	
