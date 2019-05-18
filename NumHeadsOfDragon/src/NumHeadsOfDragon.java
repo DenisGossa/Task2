@@ -5,7 +5,7 @@
  *  since 300 years and over it has grown 1 head per year.Calculate also a number of eyes
  *  for the age.
  *
- * Version 1.0
+ * Version 1.0(v1.1 -18.05.19)
  *
  * Date 06.05.2019
  *
@@ -23,17 +23,23 @@ public class NumHeadsOfDragon {
 	public NumHeadsOfDragon(){
 		countOfHeads=3;
 		countOfEyes=6;
-		}
+	}
 	
 	private void setAge() {
 		age=getInt();
-		}
+	}
 	private void calculateCountOfEyesForAllHeads(int countheads) {
-		countOfEyes=countheads*EYESPERHEAD;
+		if(EYESPERHEAD==2){
+			countOfEyes=countheads<<1;
 		}
+		else {
+			countOfEyes=countheads*EYESPERHEAD;
+		}
+	}
+	
 	private int getAge() {
 		return age;
-		}
+	}
 	
 	
 	private int getcountOfEyes() {
